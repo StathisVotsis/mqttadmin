@@ -14,27 +14,19 @@ namespace mqttadmin.Database
         {
             get
             {
-                var filename = "mqttbroker.db";
-#if SILVERLIGHT
-    // Windows Phone 8
-    var path = filename;
-#else
-
-#if __ANDROID__
-    string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); ;
-#else
+                var sqliteFilename = "mqtt.db";
+                var path="";
 #if __IOS__
-        // we need to put in /Library/ on iOS5.1 to meet Apple's iCloud terms
-        // (they don't want non-user-generated data in Documents)
-        string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
-        string libraryPath = Path.Combine (documentsPath, "..", "Library");
+                string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                string libraryPath = Path.Combine(documentsPath, "..", "Library");
+                path = Path.Combine(libraryPath, sqliteFilename);
 #else
-                // UWP
-                string libraryPath = "";
+#if __ANDROID__
+                string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                path = Path.Combine(documentsPath, sqliteFilename);
 #endif
 #endif
-                var path = Path.Combine(libraryPath, filename);
-#endif
+               
                 return path;
             }
         }
