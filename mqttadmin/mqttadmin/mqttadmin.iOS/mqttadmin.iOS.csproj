@@ -124,7 +124,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\mqttadmin\mqttadmin.csproj">
-      <Project>{166E58E9-CA2C-433C-A8E9-7DF5A1F351A4}</Project>
+      <Project>{BAD2159C-9F98-4D35-9627-B4D7996748E9}</Project>
       <Name>mqttadmin</Name>
     </ProjectReference>
   </ItemGroup>

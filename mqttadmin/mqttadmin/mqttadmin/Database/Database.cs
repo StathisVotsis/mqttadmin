@@ -4,8 +4,7 @@ using System.IO;
 using System.Linq;
 using mqttadmin.Models;
 using SQLite;
-using Windows.Storage;
-using Xamarin.Forms.PlatformConfiguration;
+
 
 namespace mqttadmin.Database
 {
