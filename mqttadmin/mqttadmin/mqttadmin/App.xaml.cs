@@ -1,4 +1,5 @@
-﻿using mqttadmin.Views;
+﻿using mqttadmin.Data;
+using mqttadmin.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,9 @@ namespace mqttadmin
 {
 	public partial class App : Application
 	{
+
+        static DBItemController dbitemcontroller;
+
 		public App ()
 		{
 			InitializeComponent();
@@ -31,5 +35,17 @@ namespace mqttadmin
 		{
 			// Handle when your app resumes
 		}
+
+        public static DBItemController dbitemController
+        {
+            get
+            {
+                if(dbitemcontroller == null)
+                {
+                    dbitemcontroller = new DBItemController();
+                }
+                return dbitemcontroller;
+            }
+        }
 	}
 }

@@ -11,6 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace mqttadmin.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
+
 	public partial class LoginView : ContentPage
 	{
         public LoginModel loginModel;
@@ -19,10 +20,12 @@ namespace mqttadmin.Views
 		{
 			InitializeComponent ();
             loginModel = new LoginModel();
+
             MessagingCenter.Subscribe<LoginModel,string>(this,"LoginAlert",(sender,username)=> 
             {
                 DisplayAlert("Title",username,"Oke");
             });
+
             this.BindingContext = loginModel;
 
             usernameEntry.Completed += (object sender, EventArgs e) =>
