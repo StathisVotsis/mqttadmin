@@ -36,7 +36,7 @@ namespace mqttadmin.Models
         public LoginModel()
         {
             SubmitCommand = new Command(OnSubmit);
-            //this.host = App.dbitemController.GetDBItem().Host;
+            host = App.dbitemController.GetDBItem().Host;
         }
 
         public void OnSubmit()
