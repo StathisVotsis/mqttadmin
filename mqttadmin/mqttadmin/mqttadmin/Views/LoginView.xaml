@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mqttadmin.Views.LoginView">
+             x:Class="mqttadmin.Views.LoginView"
+             BackgroundColor="LightGray">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="LightGray"  Margin="25">
+        <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="LightGray"  Margin="0">
 
             <Label TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize = "30" Text="Mqtt Admin" />
 
@@ -13,7 +14,7 @@
                 <Entry x:Name="hostEntry" Text="{Binding Host}" Placeholder="Domain or ip" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="35"/>
 
                 <Label Text="Port" HorizontalOptions="CenterAndExpand" FontSize = "20"/>
-                <Entry x:Name="portEntry" Text="{Binding Post}" Placeholder="Port" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="35"/>
+                <Entry x:Name="portEntry" Text="{Binding Port}" Placeholder="Port" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="35"/>
 
                 <Label Text="Username" HorizontalOptions="CenterAndExpand" FontSize = "20"/>
                 <Entry x:Name="usernameEntry" Text="{Binding Username}" Placeholder="Username" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="35"/>
@@ -22,8 +23,10 @@
                 <Entry x:Name="passwordEntry" Text="{Binding Password}" IsPassword="true" Placeholder="Password" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="35"/>
 
                 <Button Text="Login" Command="{Binding SubmitCommand}" HorizontalOptions="CenterAndExpand" Margin="25" WidthRequest="150" HeightRequest="50" BackgroundColor="DeepSkyBlue" TextColor="White"/>
-            
-            <Label x:Name="messageLabel"/>
+
+                <Button Text="Logout" Command="{Binding SubmitCommand2}" HorizontalOptions="CenterAndExpand" Margin="25" WidthRequest="150" HeightRequest="50" BackgroundColor="Red" TextColor="White"/>
+
+                <Label x:Name="messageLabel"/>
 
             
             
