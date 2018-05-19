@@ -7,7 +7,7 @@ namespace mqttadmin.Models
 {
     public class DBItem
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int Id { get; set; }
 
         public string Host { get; set; }

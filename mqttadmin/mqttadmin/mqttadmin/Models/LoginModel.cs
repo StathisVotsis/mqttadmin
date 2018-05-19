@@ -53,8 +53,29 @@ namespace mqttadmin.Models
         {
             SubmitCommand = new Command(OnSubmit);
             SubmitCommand2 = new Command(OnSubmit2);
-            var e = App.dbitemController.GetDBItem();
-            Host = e.Host;
+           
+            try
+            {
+                var e = App.dbitemController.GetDBItem();
+                if (e.Host != null)
+                {
+                    Host = e.Host;
+                    Port = e.Port;
+                    Username = e.UserName;
+                    Password = e.PassWord;
+                }
+                else
+                {
+
+                }
+            }
+            catch(Exception)
+            {
+
+            }
+           
+            
+            
         }
 
         public void OnSubmit()
@@ -63,10 +84,8 @@ namespace mqttadmin.Models
             {
                 MessagingCenter.Send(this, "LoginAlert", Username);
             }
-            //string var = App.dbitemController.GetDBItem().Host;
-            //if(var == null)
-            //{
-                App.dbitemController.SaveDBItem(new DBItem { Id = 1, Host = Host, Port = Port, UserName = Username, PassWord = Password});
+            
+                App.dbitemController.SaveDBItem(new DBItem { Id = 0, Host = Host, Port = Port, UserName = Username, PassWord = Password});
 
                 var e = App.dbitemController.GetDBItem();
                 Host = e.Host;
@@ -76,13 +95,14 @@ namespace mqttadmin.Models
 
 
 
-            //}
+           
 
         }
 
         public void OnSubmit2()
         {
-            App.dbitemController.DeleteDBItem(1);
+            App.dbitemController.DeleteDBItem(12);
+            MessagingCenter.Send(this, "LoginAlert", Username);
             var e = App.dbitemController.GetDBItem();
             Host = e.Host;
             Port = e.Port;

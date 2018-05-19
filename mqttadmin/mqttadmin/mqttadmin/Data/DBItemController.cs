@@ -54,6 +54,8 @@ namespace mqttadmin.Data
             lock (locker)
             {
                 return this.database.Delete<DBItem>(id);
+                 //database.DropTable<DBItem>();
+                //return 1;
             }
         }
     }
