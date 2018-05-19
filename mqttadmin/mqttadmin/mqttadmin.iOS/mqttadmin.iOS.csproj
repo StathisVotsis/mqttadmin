@@ -120,7 +120,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\mqttadmin\mqttadmin.csproj">
-      <Project>{A6163FF6-89B0-4E9F-9F61-E512C6744081}</Project>
+      <Project>{66706888-650A-488B-9AEA-DA73EF5080FF}</Project>
       <Name>mqttadmin</Name>
     </ProjectReference>
   </ItemGroup>
@@ -165,5 +165,6 @@
     <ImageAsset Include="Media.xcassets\LaunchImages.launchimage\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Media.xcassets\AppIcon.appiconset\Contents.json" />
   </ItemGroup>
 </Project>
