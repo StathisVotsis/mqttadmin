@@ -2,13 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mqttadmin.Views.LoginView"
-             BackgroundColor="LightGray">
+             BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="LightGray"  Margin="0">
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="White"  Margin="0">
 
-            <Label TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize = "30" Text="Mqtt Admin" />
+            <Label TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize = "25" Text="Mqtt Admin" />
 
-            <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="DeepSkyBlue" Margin="25">
+            <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="DeepSkyBlue" Margin="20">
 
                 <Label Text="Host" HorizontalOptions="CenterAndExpand" FontSize = "20"/>
                 <Entry x:Name="hostEntry" Text="{Binding Host}" Placeholder="Domain or ip" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="35"/>
@@ -22,18 +23,19 @@
                 <Label Text="Password" HorizontalOptions="CenterAndExpand" FontSize = "20"/>
                 <Entry x:Name="passwordEntry" Text="{Binding Password}" IsPassword="true" Placeholder="Password" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="35"/>
 
-                <Button Text="Login" Command="{Binding SubmitCommand}" HorizontalOptions="CenterAndExpand" Margin="25" WidthRequest="150" HeightRequest="50" BackgroundColor="DeepSkyBlue" TextColor="White"/>
+                <Button Text="Login" Command="{Binding SubmitCommand}" HorizontalOptions="CenterAndExpand" Margin="10" WidthRequest="150" HeightRequest="50" BackgroundColor="DeepSkyBlue" TextColor="White"/>
 
-                <Button Text="Logout" Command="{Binding SubmitCommand2}" HorizontalOptions="CenterAndExpand" Margin="25" WidthRequest="150" HeightRequest="50" BackgroundColor="Red" TextColor="White"/>
+                <Button Text="Logout" Command="{Binding SubmitCommand2}" HorizontalOptions="CenterAndExpand" Margin="10" WidthRequest="150" HeightRequest="50" BackgroundColor="Red" TextColor="White"/>
 
-                <Label x:Name="messageLabel"/>
+                    <Label x:Name="messageLabel"/>
+                
+                </StackLayout>
 
-            
-            
+            <Label TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize = "10" Text="created by S.Votsis" />
+                
         </StackLayout>
-
-            <Label TextColor="Black" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" FontSize = "20" Text="created by S.Votsis" />
-        </StackLayout>
+            
+            </ScrollView>
 
 
     </ContentPage.Content>
